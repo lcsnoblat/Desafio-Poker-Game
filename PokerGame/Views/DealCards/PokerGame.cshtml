@@ -1,0 +1,36 @@
+﻿@model PokerGame.Models.DealCards
+@{
+    ViewBag.Title = "DealCards";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container has-text-centered">
+    <h1 class="">Let's Play!</h1>
+    <br />
+    <h2>Player's Cards:</h2>
+    <h3>@ViewBag.playerHand</h3>
+    <div class="hand grow">
+        @foreach (var cards in ViewBag.playerCards)
+        {
+            <div class="card @cards.MySuit">
+                <p>@cards.MyFace</p>
+            </div>
+        }
+    </div>
+    <h2>@ViewBag.HighCard</h2>
+
+
+    <h2 class="">Computer Hand:</h2>
+    <h3>@ViewBag.computerHand</h3>
+    <div class="hand grow">
+        @foreach (var cards in ViewBag.computerCards)
+        {
+            <div class="card @cards.MySuit">
+                <p>@cards.MyFace</p>
+            </div>
+        }
+    </div>
+    <h1>@ViewBag.Winner</h1>
+
+</div>
+
